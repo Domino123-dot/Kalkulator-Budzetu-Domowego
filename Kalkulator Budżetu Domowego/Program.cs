@@ -8,20 +8,27 @@ static void switchCase()
     Console.WriteLine("╚════════════════════════════════════════════════════════════════════════════════════════╝");
     Console.WriteLine("1.Obliczanie Budżetu domowego");
     Console.WriteLine("2.Instrukcja");
+    Console.WriteLine("3.Wyjście z programu");
     Console.WriteLine("Wprowadź dane:");
     var answer = Console.ReadLine();
 
     switch (answer)
     {
         case "1":
-            Console.WriteLine("test");
+            calculateIncomeMenu();
             break;
         case "2":
             Tutorial();
 
             break;
 
+        case "3":
+            exit();
+
+            break;
+
         default:
+            Console.Clear();
             Console.WriteLine("Źle wybrana opcja!");
             switchCase();
 
@@ -65,10 +72,65 @@ static void Tutorial()
 
     else
     {
-        Console.WriteLine("Błąd!");
+
+        Console.Clear();
+        Console.WriteLine("Źle wybrana opcja, wybierz pomiędzy 1 a 2!");
         Tutorial();
     }
 }
+
+static void calculateIncomeMenu()
+{
+    Console.Clear();
+    Console.WriteLine("╔════════════════════════════════════════════════════════════════════════════════════════╗");
+    Console.WriteLine("                                           KALKULATOR BUDŻETU                             ");
+    Console.WriteLine("╚════════════════════════════════════════════════════════════════════════════════════════╝");
+    Console.WriteLine("Wprowadź następujące dane:");
+    Thread.Sleep(1000);
+    Console.WriteLine("Wartość A: Przychód miesięczny na jedno gospodarstwo domowe");
+    Thread.Sleep(1000);
+    Console.WriteLine("Wartość A2: Inne wpływy użytkownika");
+    Thread.Sleep(1000);
+    Console.WriteLine("Wartość B: Wydatki podstawowe (Czynsz)");
+    Thread.Sleep(1000);
+    Console.WriteLine("Wartość B2: Media (w tym gaz i prąd)");
+    Thread.Sleep(1000);
+    Console.WriteLine("Wartość B3: Zakupy, miesięczny wykaz.");
+    Thread.Sleep(1000);
+    Console.WriteLine("Są to podstawowe dane jakich wymagamy, późniejsze zmiany będą możliwe w odpowiednim menu");
+
+    Thread.Sleep(1000);
+    inputCalculateVariables();
+
+
+}
+
+static void inputCalculateVariables()
+{
+    Console.WriteLine("Wartość A: ");
+    var a = Console.ReadLine();
+    int numberA = 0;
+    Int32.TryParse(a, out numberA);
+    Console.WriteLine("Wartość A2: ");
+    var a2 = Console.ReadLine();
+    int numberA2 = 0;
+    Int32.TryParse(a2, out numberA2);
+    Console.WriteLine("Wartość B: ");
+    var b = Console.ReadLine();
+    int numberB = 0;
+    Int32.TryParse(b, out numberB);
+    Console.WriteLine("Wartość B2: ");
+    var b2 = Console.ReadLine();
+    int numberB2 = 0;
+    Int32.TryParse(b2, out numberB2);
+    Console.WriteLine("Wartość B3: ");
+    var b3 = Console.ReadLine();
+    int numberB3 = 0;
+    Int32.TryParse(b3, out numberB3);
+
+    Console.WriteLine((numberA + numberA2) - (numberB - numberB2 - numberB3));
+}
+
 
 
 
