@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kalkulator Budżetu Domowego", "Kalkulator Budżetu Domowego\Kalkulator Budżetu Domowego.csproj", "{BA5C6B3E-6F73-446A-9B8E-F71890950B69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA5C6B3E-6F73-446A-9B8E-F71890950B69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA5C6B3E-6F73-446A-9B8E-F71890950B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA5C6B3E-6F73-446A-9B8E-F71890950B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA5C6B3E-6F73-446A-9B8E-F71890950B69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {28181FA6-4248-4A72-AE3E-E57D820A2CD8}
+	EndGlobalSection
+EndGlobal
