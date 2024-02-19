@@ -107,32 +107,79 @@ static void calculateIncomeMenu()
 
 static void inputCalculateVariables()
 {
+
     Console.WriteLine("Wartość A: ");
     var a = Console.ReadLine();
-    int numberA = 0;
-    Int32.TryParse(a, out numberA);
+    uint numberA = 0;
+    UInt32.TryParse(a, out numberA);
+
     Console.WriteLine("Wartość A2: ");
     var a2 = Console.ReadLine();
-    int numberA2 = 0;
-    Int32.TryParse(a2, out numberA2);
+    uint numberA2 = 0;
+    UInt32.TryParse(a2, out numberA2);
     Console.WriteLine("Wartość B: ");
     var b = Console.ReadLine();
-    int numberB = 0;
-    Int32.TryParse(b, out numberB);
+    uint numberB = 0;
+    UInt32.TryParse(b, out numberB);
     Console.WriteLine("Wartość B2: ");
     var b2 = Console.ReadLine();
-    int numberB2 = 0;
-    Int32.TryParse(b2, out numberB2);
+    uint numberB2 = 0;
+    UInt32.TryParse(b2, out numberB2);
     Console.WriteLine("Wartość B3: ");
     var b3 = Console.ReadLine();
-    int numberB3 = 0;
-    Int32.TryParse(b3, out numberB3);
-
-    Console.WriteLine((numberA + numberA2) - (numberB - numberB2 - numberB3));
+    uint numberB3 = 0;
+    UInt32.TryParse(b3, out numberB3);
+    uint balance = (numberA + numberA2) - (numberB + numberB2 + numberB3);
+    
+    uint[] arr = { numberA, numberA2, numberB, numberB2, numberB3, balance };
+   
+    Console.WriteLine("Wprowadzono dane!");
+    Thread.Sleep(1000);
+    Console.WriteLine("Zostaniesz przeniesiony do menu głównego!");
+    Thread.Sleep(1000);
+    modifiedMenu(balance , arr);
 }
 
 
 
+
+static void modifiedMenu(uint balance , uint [] arr)
+{
+    Console.Clear();
+    Console.WriteLine("╔════════════════════════════════════════════════════════════════════════════════════════╗");
+    Console.WriteLine("                                             MENU                                         ");
+    Console.WriteLine("╚════════════════════════════════════════════════════════════════════════════════════════╝");
+    Console.WriteLine("1.Modyfikacja Przychodów/Wydatków");
+    Console.WriteLine("2.Instrukcja");
+    Console.WriteLine("3.Wyjście z programu");
+    Console.WriteLine("                   ");
+    Console.WriteLine("Twoje saldo wynosi: " + balance);
+    Console.WriteLine("Wprowadź dane:");
+    var input = Console.ReadLine();
+
+
+    switch (input)
+    {
+        case "1":
+
+            break;
+
+        case "2":
+            Tutorial();
+            break;
+
+        case "3":
+            exit();
+            break;
+
+        default:
+            Console.WriteLine("Błąd! Wprowadaj, opcje tylko pomiędzy 1 a 3!");
+            Thread.Sleep(1000);
+            exit();
+            break;
+    };
+
+}
 
 
 
