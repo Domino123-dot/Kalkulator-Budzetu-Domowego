@@ -15,7 +15,7 @@ static void main()
     switch (answer)
     {
         case "1":
-            calculateIncomeMenu();
+            calculateIncomeInfo();
             break;
         case "2":
             Tutorial();
@@ -35,7 +35,7 @@ static void main()
             break;
     }
 
-};
+}; // main starting menu
 
 static void exit()
 {
@@ -79,7 +79,7 @@ static void Tutorial()
     }
 }
 
-static void calculateIncomeMenu()
+static void calculateIncomeInfo()
 {
     Console.Clear();
     Console.WriteLine("╔════════════════════════════════════════════════════════════════════════════════════════╗");
@@ -103,7 +103,7 @@ static void calculateIncomeMenu()
     inputCalculateVariables();
 
 
-}
+} // info to inputCalculateVariables
 
 static void inputCalculateVariables()
 {
@@ -143,7 +143,7 @@ static void inputCalculateVariables()
     Console.WriteLine("Zostaniesz przeniesiony do menu głównego!");
     Thread.Sleep(1000);
     modifiedMenu(balance , numberA , numberA2 , numberB , numberB2 , numberB3);
-}
+} // menu with expenses and income input
 
 
 
@@ -169,7 +169,7 @@ static void modifiedMenu(int balance , int numberA , int numberA2 , int numberB 
     switch (input)
     {
         case "1":
-            calculateIncomeMenu();
+            calculateIncomeInfo();
             break;
 
         case "2":
@@ -188,13 +188,13 @@ static void modifiedMenu(int balance , int numberA , int numberA2 , int numberB 
             break;
     };
 
-}
+} // menu after someone adds info to be calculated
 
 
 
 
 
-main();
+main(); // main starting menu
 
 
 
@@ -202,4 +202,4 @@ main();
 
 
 
-Console.ReadKey();
+Console.ReadKey(); // Option so terminal wont close on its own
