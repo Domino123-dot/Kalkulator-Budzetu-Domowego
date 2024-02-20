@@ -1,6 +1,6 @@
 ﻿
 
-static void switchCase()
+static void main()
 {
 
     Console.WriteLine("╔════════════════════════════════════════════════════════════════════════════════════════╗");
@@ -30,7 +30,7 @@ static void switchCase()
         default:
             Console.Clear();
             Console.WriteLine("Źle wybrana opcja!");
-            switchCase();
+            main();
 
             break;
     }
@@ -62,7 +62,7 @@ static void Tutorial()
 
     if (answerTutorial == "1")
     {
-        switchCase();
+        main();
     }
 
     else if (answerTutorial == "2")
@@ -177,14 +177,14 @@ static void modifiedMenu(int balance , int numberA , int numberA2 , int numberB 
             break;
 
         case "3":
-            switchCase();
+            main();
             break;
 
         default:
             Console.WriteLine("Błąd! Wprowadaj, opcje tylko pomiędzy 1 a 3!");
             Thread.Sleep(1000);
             Console.Clear();
-            switchCase();
+            modifiedMenu( balance, numberA, numberA2, numberB, numberB2, numberB3);
             break;
     };
 
@@ -194,7 +194,7 @@ static void modifiedMenu(int balance , int numberA , int numberA2 , int numberB 
 
 
 
-switchCase();
+main();
 
 
 
