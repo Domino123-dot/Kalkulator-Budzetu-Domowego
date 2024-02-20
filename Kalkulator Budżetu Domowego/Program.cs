@@ -110,50 +110,58 @@ static void inputCalculateVariables()
 
     Console.WriteLine("Wartość A: ");
     var a = Console.ReadLine();
-    uint numberA = 0;
-    UInt32.TryParse(a, out numberA);
+    int numberA = 0;
+    Int32.TryParse(a, out numberA);
 
     Console.WriteLine("Wartość A2: ");
     var a2 = Console.ReadLine();
-    uint numberA2 = 0;
-    UInt32.TryParse(a2, out numberA2);
+    int numberA2 = 0;
+    Int32.TryParse(a2, out numberA2);
     Console.WriteLine("Wartość B: ");
     var b = Console.ReadLine();
-    uint numberB = 0;
-    UInt32.TryParse(b, out numberB);
+    int numberB = 0;
+    Int32.TryParse(b, out numberB);
     Console.WriteLine("Wartość B2: ");
     var b2 = Console.ReadLine();
-    uint numberB2 = 0;
-    UInt32.TryParse(b2, out numberB2);
+    int numberB2 = 0;
+    Int32.TryParse(b2, out numberB2);
     Console.WriteLine("Wartość B3: ");
     var b3 = Console.ReadLine();
-    uint numberB3 = 0;
-    UInt32.TryParse(b3, out numberB3);
-    uint balance = (numberA + numberA2) - (numberB + numberB2 + numberB3);
-    
-    uint[] arr = { numberA, numberA2, numberB, numberB2, numberB3, balance };
-   
+    int numberB3 = 0;
+    Int32.TryParse(b3, out numberB3);
+    int balance = (numberA + numberA2) - (numberB + numberB2 + numberB3);
+
+
     Console.WriteLine("Wprowadzono dane!");
+    if (numberA < 0 || numberA2 < 0 || numberB < 0 || numberB2 < 0 || numberB3 < 0)
+    {
+        Console.WriteLine("Wprowadzono ujemne liczby! Rozpocznij wprowadzanie danych od nowa");
+        Thread.Sleep(1000);
+        inputCalculateVariables();
+    }
     Thread.Sleep(1000);
     Console.WriteLine("Zostaniesz przeniesiony do menu głównego!");
     Thread.Sleep(1000);
-    modifiedMenu(balance , arr);
+    modifiedMenu(balance , numberA , numberA2 , numberB , numberB2 , numberB3);
 }
 
 
 
 
-static void modifiedMenu(uint balance , uint [] arr)
+static void modifiedMenu(int balance , int numberA , int numberA2 , int numberB , int numberB2 , int numberB3)
 {
+    int income = numberA + numberA2;
+    int expenses = numberB + numberB2 + numberB3;
     Console.Clear();
     Console.WriteLine("╔════════════════════════════════════════════════════════════════════════════════════════╗");
     Console.WriteLine("                                             MENU                                         ");
     Console.WriteLine("╚════════════════════════════════════════════════════════════════════════════════════════╝");
-    Console.WriteLine("1.Modyfikacja Przychodów/Wydatków");
-    Console.WriteLine("2.Instrukcja");
-    Console.WriteLine("3.Wyjście z programu");
-    Console.WriteLine("                   ");
     Console.WriteLine("Twoje saldo wynosi: " + balance);
+    Console.WriteLine("Twoje przychody wynoszą: " + income);
+    Console.WriteLine("Twoje wydatki w sumie wynoszą : " + expenses);
+    Console.WriteLine("1.Zmień wartości");
+    Console.WriteLine("2.Wyjście z programu");
+    Console.WriteLine("                   ");
     Console.WriteLine("Wprowadź dane:");
     var input = Console.ReadLine();
 
@@ -161,21 +169,22 @@ static void modifiedMenu(uint balance , uint [] arr)
     switch (input)
     {
         case "1":
-
+            calculateIncomeMenu();
             break;
 
         case "2":
-            Tutorial();
+            exit();
             break;
 
         case "3":
-            exit();
+            switchCase();
             break;
 
         default:
             Console.WriteLine("Błąd! Wprowadaj, opcje tylko pomiędzy 1 a 3!");
             Thread.Sleep(1000);
-            exit();
+            Console.Clear();
+            switchCase();
             break;
     };
 
